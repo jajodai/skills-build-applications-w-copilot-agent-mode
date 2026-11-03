@@ -31,8 +31,16 @@ OctoFit Tracker is a three-tier application for a school fitness program. The st
 Record your plan here before editing code.
 
 - Presentation tier decision:
+    - Implement the React pages and fetch logic to render data, empty states, loading, and alerts
+    - This is safest after the API contract is stable because UI behavior is a direct consumer of the API
 - Logic tier decision:
+    - Implement /api/activities, /api/teams, /api/leaderboard, and /api/workouts/suggestions/:userEmail
+    - Make error handling deliberate 4xx responses instead of uncaught cast errors
+    - This is the minimal backend behavior needed to satisfy the contract
 - Data tier decision:
+    - Fix the Mongoose schemas and model constraints in the backend
+    - Make seed data idempotent and representative
+    - This establishes the source of truth and prevents API routes from failing on cast/validation logic
 - Activity tracking approach:
 - Team management approach:
 - Leaderboard approach:
